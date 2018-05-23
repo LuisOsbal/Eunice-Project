@@ -1,0 +1,15 @@
+es:
+  author_name: "Luis Osnet"
+  owner_name: "My Next Home"
+  job: "Busca tu nuevo hogar"
+  description: "Busca tu nueva casa"
+  # navbar
+  menu:
+    home: "Inicio"
+    services: "Servicios"
+    blog: "Blog"
+    portfolio: "Portafolio"
+    contact: "Contacto"
+    buttons:
+      sign_in: "Iniciar sesión"
+      sign_out: "Cerrar sesión"
