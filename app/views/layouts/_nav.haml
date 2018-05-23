@@ -1,0 +1,66 @@
+%nav#navbar.navbar.has-shadow.is-spaced
+  .container
+    .navbar-brand
+      %a.navbar-item{:href => root_path}
+        %img{:src => "http://www.luisosnet.com/assets/luisosnet-1aec758125618e192a7973bf90b47e95b6f361c6cbd97028d718fb71d03db0fc.png", :class => 'logo-brand'}/
+        %h1.isotipo= t('owner_name')
+      #navbarBurger.navbar-burger.burger{"data-target" => "navMenu"}
+        %span
+        %span
+        %span
+    #navMenu.navbar-menu
+      .navbar-start
+        %a.navbar-item.is-active{:href => root_path}
+          %div{:style => "position:relative"}
+            %span.icon
+              %i.fa.fas.fa-home.home
+            %span= t("menu.home")
+        %a.navbar-item{:href => "#"}
+          %div{:style => "position:relative"}
+            %span.icon
+              %i.fa.fa-gear
+            %span= t("menu.services")
+        %a.navbar-item{:href => "#"}
+          %div{:style => "position:relative"}
+            %span.icon
+              %i.fa.fas.fa-rss.rss
+            %span= t("menu.blog")
+        %a.navbar-item{:href => "#"}
+          %div{:style => "position:relative"}
+            %span.icon
+              %i.fa.far.fa-envelope.email
+            %span= t("menu.contact")
+      .navbar-end
+        .navbar-item
+          .field.is-grouped.is-grouped-multiline
+            - if user_signed_in?
+              .navbar-item.has-dropdown.is-hoverable
+                %a.navbar-link
+                  Account
+                .navbar-dropdown
+                  %a.navbar-item{:href => ""}
+                    %span.icon.is-small
+                      %i.material-icons.md-18.margin-icon computer
+                    %span
+                      Dashboard
+                  %a.navbar-item{:href => ""}
+                    %span.icon.is-small
+                      %i.material-icons.md-18.margin-icon.is-info person_outline
+                    %span
+                      Profile
+                  %hr.navbar-divider
+                  %a.navbar-item{:href => destroy_user_session_path}
+                    %span.icon.is-small
+                      %i.material-icons.md-18.sign-out.margin-icon block
+                    %span= t("menu.buttons.sign_out")
+            - else
+              %p.control
+                %a.bd-tw-button.button.is-small{:href => new_user_session_path}
+                  %span.icon
+                    %i.fa.fas.fa-user
+                  %span= t("menu.buttons.sign_in")
+              %p.control
+                %a.bd-tw-button.button.is-small.is-info{:href => new_user_registration_path}
+                  %span.icon
+                    %i.fa.fas.fa-user-plus
+                  %span= t("menu.buttons.sign_up")
