@@ -1,0 +1,141 @@
+%section.hero
+  .hero-body
+    .container
+      .level
+        .level-left
+          .level-item
+            .title Nueva publicación
+      .columns
+        = render template: 'shared/dashboard/_breadcrumb'
+      = simple_form_for :advertisement, defaults: { wrapper: false }, :url => {:action => :create}, html: { class: "form-horizontal"} do |f|
+        .field.is-grouped
+          .control
+            %label.label Titulo
+            .control.has-icons-left.has-icons-right
+              = f.input :title, input_html: { class: 'input input' }, label: false
+              %span.icon.is-small.is-left
+                %i.fa.fas.fa-envelope.fa-xs
+
+        .field.is-grouped
+          .control
+            %label.label Precio
+            .control.has-icons-left.has-icons-right
+              = f.input :price, input_html: { class: 'input input' }, label: false
+              %span.icon.is-small.is-left
+                %i.fa.fas.fa-envelope.fa-xs
+        .field.is-horizontal
+          .control
+            %label.label Tipo de vivienda
+        .field.is-horizontal
+          .field-body
+            .field
+              .control.has-icons-left.has-icons-right
+                = f.input :dwelling_type, input_html: { class: 'input input' }, label: false
+                %span.icon.is-small.is-left
+                  %i.fa.fas.fa-envelope.fa-xs
+        .field.is-grouped
+          .control
+            %label.label Codigo Postal
+            .control.has-icons-left.has-icons-right
+              = f.input :postal_code, input_html: { class: 'input input' }, label: false
+              %span.icon.is-small.is-left
+                %i.fa.fas.fa-envelope.fa-xs
+        .field.is-horizontal
+          .control
+            %label.label Calle
+        .field.is-horizontal
+          .field-body
+            .field
+              .control.has-icons-left.has-icons-right
+                = f.input :street, input_html: { class: 'input input' }, label: false
+                %span.icon.is-small.is-left
+                  %i.fa.fas.fa-envelope.fa-xs
+        .field.is-horizontal
+          .control
+            %label.label Numero exterior
+        .field.is-horizontal
+          .field-body
+            .field
+              .control.has-icons-left.has-icons-right
+                = f.input :exterior_number, input_html: { class: 'input input' }, label: false
+                %span.icon.is-small.is-left
+                  %i.fa.fas.fa-envelope.fa-xs
+        .field.is-horizontal
+          .control
+            %label.label Numero interior
+        .field.is-horizontal
+          .field-body
+            .field
+              .control.has-icons-left.has-icons-right
+                = f.input :interior_number, input_html: { class: 'input input' }, label: false
+                %span.icon.is-small.is-left
+                  %i.fa.fas.fa-envelope.fa-xs
+
+        .field.is-horizontal
+          .control
+            %label.label Colonia
+        .field.is-horizontal
+          .field-body
+            .field
+              .control.has-icons-left.has-icons-right
+                = f.input :colony, input_html: { class: 'input input' }, label: false
+                %span.icon.is-small.is-left
+                  %i.fa.fas.fa-envelope.fa-xs
+
+        .field.is-horizontal
+          .control
+            %label.label Delegación o Municipio
+        .field.is-horizontal
+          .field-body
+            .field
+              .control.has-icons-left.has-icons-right
+                = f.input :municipality, input_html: { class: 'input input' }, label: false
+                %span.icon.is-small.is-left
+                  %i.fa.fas.fa-envelope.fa-xs
+
+        .field.is-horizontal
+          .control
+            %label.label Ciudad
+        .field.is-horizontal
+          .field-body
+            .field
+              .control.has-icons-left.has-icons-right
+                = f.input :city, input_html: { class: 'input input' }, label: false
+                %span.icon.is-small.is-left
+                  %i.fa.fas.fa-envelope.fa-xs
+
+        .field.is-horizontal
+          .control
+            %label.label Estado
+        .field.is-horizontal
+          .field-body
+            .field
+              .control.has-icons-left.has-icons-right
+                = f.input :state, input_html: { class: 'input input' }, label: false
+                %span.icon.is-small.is-left
+                  %i.fa.fas.fa-envelope.fa-xs
+
+        .field.is-grouped
+          .control
+            %label.label Pais
+            .field.is-horizontal
+              .field-body
+                .field
+                  .control
+                    .select.is-fullwidth
+                      = f.input :country, input_html: { class: 'input input' }, label: false
+
+        .field.is-horizontal
+          .control
+            %label.label Descripción
+        .field.is-horizontal
+          .field-body
+            .field
+              .control
+                = f.input :content, as: :text, input_html: { class: 'textarea textarea' }, label: false
+
+        .field.is-horizontal
+          .field-body
+            .field
+              .control
+                = f.button :submit, "Guardar", :class => 'button button is-info'

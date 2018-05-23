@@ -1,8 +1,8 @@
-en:
+es:
   author_name: "Luis Osnet"
-  owner_name: "Autotransportes Balderas"
-  job: "Fletes y Mudanzas"
-  description: "Autotransportes Balderas se consolida como una de las empresas que viaja a todas las rutas de México. Somos una empresa especializada en el transporte de carga exclusiva o compartida según las necesidades de nuestros clientes con más de 25 años de experiencia."
+  owner_name: "My Next Home"
+  job: "Busca tu nuevo hogar"
+  description: "Busca tu nueva casa"
   # navbar
   menu:
     home: "Inicio"
@@ -12,3 +12,36 @@ en:
     contact: "Contacto"
     buttons:
       sign_in: "Iniciar sesión"
+      sign_out: "Cerrar sesión"
+
+  number:
+   currency:
+    format:
+      delimiter: ! ','
+      format: ! '%u%n'
+      precision: 2
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+      unit: $
+   format:
+    delimiter: ! ','
+    precision: 3
+    separator: .
+    significant: false
+    strip_insignificant_zeros: false
+   human:
+    decimal_units:
+      format: ! '%n %u'
+      units:
+        billion: Billion
+        million: Million
+        quadrillion: Quadrillion
+        thousand: Thousand
+        trillion: Trillion
+        unit: ''
+    format:
+      delimiter: ''
+      precision: 3
+      significant: true
+      strip_insignificant_zeros: true
