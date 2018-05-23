@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_061603) do
+ActiveRecord::Schema.define(version: 2018_05_23_141011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "advertisements", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "price"
+    t.string "dwelling_type"
+    t.string "postal_code"
+    t.string "street"
+    t.string "exterior_number"
+    t.string "interior_number"
+    t.string "colony"
+    t.string "municipality"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.bigint "user_id", null: false
+    t.boolean "status", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_advertisements_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -45,4 +66,5 @@ ActiveRecord::Schema.define(version: 2018_05_23_061603) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "advertisements", "users"
 end

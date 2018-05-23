@@ -1,0 +1,48 @@
+%section.hero
+  .hero-body
+    .container
+      .columns
+        #search-el.hero-body{:style => ""}
+          .container.has-text-centered{:id => ""}
+            %h1.title
+              Busca tu nuevo departamento
+          %section#search-items-results
+            .container
+              .field.has-addons{:style => "padding: 10px 0px 0px 0px;"}
+                %p#main-search-control.control.is-expanded
+                  %input#main-search-input.input{:placeholder => "Buscar departamento", :type => "text"}
+                %p.control
+                  %button#main-search-button.button.is-info
+                    Search
+              %p#status-text.help.is-danger
+              .tile.is-ancestor{:style => ""}
+                #left-tile-column.tile.is-6.is-vertical.is-parent
+                #right-tile-column.tile.is-6.is-vertical.is-parent
+      - @advertisements.each do |advertisement|
+        .panel
+          %a{:href => advertisement_path(advertisement.id)}
+            .panel-heading
+              .level
+                .level-left
+                  %header
+                    .title= advertisement.title
+                .level-right
+                  .level-item
+                    .field.is-grouped
+                      %p.control
+                        %p.is-info.is-outlined
+                          %span= (advertisement.created_at).strftime("Publicado el: %m/%d/%Y")
+            .selloption.panel-block
+              .media
+                .media-left
+                  %p.image
+                    %img{:alt => "", :src => "https://placehold.it/200x200"}
+                .media-content
+                  .content
+                    %p= advertisement.street + ', ' + advertisement&.exterior_number + ', ' + advertisement&.interior_number + ', ' + advertisement.colony + ', ' + advertisement.municipality + ', ' + advertisement.city + ', ' + advertisement.state + ', ' + advertisement.country
+                    .field.is-grouped.is-grouped-multiline
+                      .control
+                        .tag.is-warning{:href => "#colors"}= number_to_currency(advertisement.price, precision: 2)
+                    %p= advertisement.content
+
+      = render template: 'shared/_pagination'

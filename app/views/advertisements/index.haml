@@ -1,0 +1,44 @@
+%section.hero
+  .hero-body
+    .container
+      .level
+        .level-left
+          .level-item
+            .title Mis publicaciones
+      .columns
+        = render template: 'shared/dashboard/_breadcrumb'
+        = render template: 'shared/dashboard/_float_button'
+      - if @advertisements.count == 0
+        %img{:src => "https://placehold.it/1260x680"}
+      - else
+        - @advertisements.each do |advertisement|
+          .panel
+            .panel-heading
+              .level
+                .level-left
+                  %header
+                    .title= advertisement.title
+                .level-right
+                  .level-item
+                    .field.is-grouped
+                      %p.control
+                        %a.button.is-info.is-outlined{:href => advertisement_path(advertisement.id)}
+                          %span Edit
+                          %span.icon.is-small
+                            %i.material-icons create
+                      %p.control
+                        %a.button.is-danger.is-outlined{"data-method" => "delete", :href => advertisement_path(advertisement), :rel => "nofollow"}
+                          %span Eliminar
+                          %span.icon.is-small
+                            %i.material-icons delete_sweep
+            .selloption.panel-block
+              .media
+                .media-left
+                  %p.image
+                    %img{:alt => "", :src => "https://placehold.it/180x120"}/
+                .media-content
+                  .content
+                    %h4= advertisement.street
+                    %p= advertisement.content
+
+        = render template: 'shared/_pagination'
