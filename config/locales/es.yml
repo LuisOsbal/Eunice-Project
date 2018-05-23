@@ -13,3 +13,35 @@ es:
     buttons:
       sign_in: "Iniciar sesión"
       sign_out: "Cerrar sesión"
+
+  number:
+   currency:
+    format:
+      delimiter: ! ','
+      format: ! '%u%n'
+      precision: 2
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+      unit: '$ '
+   format:
+    delimiter: ! ','
+    precision: 3
+    separator: .
+    significant: false
+    strip_insignificant_zeros: false
+   human:
+    decimal_units:
+      format: ! '%n %u'
+      units:
+        billion: Billion
+        million: Million
+        quadrillion: Quadrillion
+        thousand: Thousand
+        trillion: Trillion
+        unit: ''
+    format:
+      delimiter: ''
+      precision: 3
+      significant: true
+      strip_insignificant_zeros: true
