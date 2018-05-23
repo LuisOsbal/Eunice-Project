@@ -1,24 +1,14 @@
-# README
+# My next home  :steam_locomotive::train::train::train::train::train:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
-Things you may want to cover:
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-* Ruby version
+# About this project
+This will be a project to manage departments around the world.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup
+ - Fork this project
+ - Run `bundle install`
+ - Run `rails generate simple_form:install`
+ - Run `rake db:create && rake db:migrate`
